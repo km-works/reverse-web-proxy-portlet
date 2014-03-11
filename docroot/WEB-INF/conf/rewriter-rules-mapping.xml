@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<mapping>
+  <class name="org.apache.portals.applications.webcontent.rewriter.rules.impl.RulesetImpl">
+    <map-to xml="ruleset"/>
+
+    <field name="id" type="java.lang.String">
+      <bind-xml name="id" node="attribute"/>
+    </field>
+
+    <field name="removeComments" type="boolean">
+      <bind-xml name="remove-comments" node="attribute"/>
+    </field>
+                                   
+    <field name="tags"
+           type="org.apache.portals.applications.webcontent.rewriter.rules.impl.TagImpl"
+           collection="collection">
+      <bind-xml name="tag"/>
+    </field>
+
+    <field name="rules"
+           type="org.apache.portals.applications.webcontent.rewriter.rules.impl.RuleImpl"
+           collection="collection">
+      <bind-xml name="rule"/>
+    </field>
+
+  </class>
+
+  <class name="org.apache.portals.applications.webcontent.rewriter.rules.impl.TagImpl">
+    <map-to xml="tag"/>
+                                   
+    <field name="id" type="java.lang.String">
+      <bind-xml name="id" node="attribute"/>
+    </field>
+
+    <field name="strip" type="boolean">
+      <bind-xml name="strip" node="attribute"/>
+    </field>
+
+    <field name="remove" type="boolean">
+      <bind-xml name="remove" node="attribute"/>
+    </field>
+
+    <field name="attributes"
+           type="org.apache.portals.applications.webcontent.rewriter.rules.impl.AttributeImpl"
+           collection="collection">
+      <bind-xml name="attribute"/>
+    </field>
+
+  </class>
+
+  <class name="org.apache.portals.applications.webcontent.rewriter.rules.impl.RuleImpl">
+    <map-to xml="rule"/>
+                                   
+    <field name="id" type="java.lang.String">
+      <bind-xml name="id" node="attribute"/>
+    </field>
+
+    <field name="suffix" type="java.lang.String">
+      <bind-xml name="suffix" node="attribute"/>
+    </field>
+
+    <field name="ignorePrefixes" type="java.lang.String">
+      <bind-xml name="ignore-prefixes" node="attribute"/>
+    </field>
+
+    <field name="useBase" type="boolean">
+      <bind-xml name="use-base" node="attribute"/>
+    </field>
+
+    <field name="popup" type="boolean">
+      <bind-xml name="popup" node="attribute"/>
+    </field>
+
+  </class>
+
+  <class name="org.apache.portals.applications.webcontent.rewriter.rules.impl.AttributeImpl">
+    <map-to xml="attribute"/>
+                                   
+    <field name="id" type="java.lang.String">
+      <bind-xml name="id" node="attribute"/>
+    </field>
+
+    <field name="ruleId" type="java.lang.String">
+      <bind-xml name="rule" node="attribute"/>
+    </field>
+
+  </class>
+
+</mapping>

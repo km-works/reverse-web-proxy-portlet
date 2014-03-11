@@ -1,0 +1,6 @@
+classes/
+target/
+build/
+dist/
+*.bak
+/nbproject/private/

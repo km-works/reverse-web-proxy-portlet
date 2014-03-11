@@ -1,0 +1,78 @@
+<?xml version='1.0' ?>
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<ruleset id='test-set-102' remove-comments='false'>
+
+<!-- standard rewriter link rules -->
+<rule id='base' use-base='true' ignore-prefixes='javascript:,mailto:,#'/>
+
+<!-- remove tags -->
+<tag id='html' remove='true'/>
+<tag id='frameset' remove='true'/>
+<tag id='frame' remove='true'/>
+<tag id='noframes' remove='true'/>
+<tag id='body' remove='true'/>
+
+<!-- strip tags -->
+<tag id='head' remove='true'/>
+
+<!-- rewritten tags -->
+<tag id='a'>
+    <attribute id='href' rule='base'/>
+</tag>
+<tag id='link'>
+    <attribute id='href' rule='base'/>
+</tag>
+<tag id='img'>
+    <attribute id='src' rule='base'/>
+</tag>
+<tag id='input'>
+    <attribute id='src' rule='base'/>
+</tag>
+<tag id='option'>
+    <attribute id='value' rule='base'/>
+</tag>
+<tag id='applet'>
+    <attribute id='codebase' rule='base'/>
+</tag>
+<tag id='frame'>
+    <attribute id='src' rule='base'/>
+</tag>
+<tag id='script'>
+    <attribute id='src' rule='base'/>
+</tag>
+<tag id='form'>
+    <attribute id='action' rule='base'/>
+</tag>
+<tag id='area'>
+    <attribute id='href' rule='base'/>
+</tag>
+<tag id='body'>
+    <attribute id='background' rule='base'/>
+</tag>
+<tag id='td'>
+    <attribute id='background' rule='base'/>
+</tag>
+<tag id='td'>
+    <attribute id='onclick' rule='base'/>
+</tag>
+
+    <!-- sample rules -->
+<rule id='portal-popup' popup='true' use-base='true' suffix='/portal' ignore-prefixes='javascript:,mailto:'/>
+<rule id='test' use-base='false' suffix='/whatever&amp;xxx=1' popup='1'/>
+
+</ruleset>
