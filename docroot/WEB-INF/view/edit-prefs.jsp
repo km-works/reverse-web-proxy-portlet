@@ -9,7 +9,7 @@
 	String editPrefsURL = (String)request.getAttribute("actionURL");
 %>
 
-<h3 class="portlet-section-header">Reverse Proxy: Instanz-spezifische Einstellungen</h3>
+<h3 class="portlet-section-header">Reverse Web Proxy Preferences</h3>
 
 <form id="<portlet:namespace/>editForm" action="<%= editPrefsURL %>" method="post">
   
