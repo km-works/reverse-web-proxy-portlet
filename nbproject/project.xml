@@ -11,11 +11,10 @@
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
                 <library dirs="200">
-                    <file>${file.reference.portals-bridges-common-2.0.jar-1}</file>
-                    <path-in-war>WEB-INF/lib</path-in-war>
+                    <file>${file.reference.portal-service-6.2.1.jar}</file>
                 </library>
                 <library dirs="200">
-                    <file>${file.reference.portal-service-6.2.0.jar}</file>
+                    <file>${file.reference.portals-bridges-common-2.0.jar-1}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
                 <library dirs="200">
@@ -23,7 +22,7 @@
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
                 <library dirs="200">
-                    <file>${file.reference.portlet-api-2.0.jar}</file>
+                    <file>${file.reference.commons-lang-2.5.jar}</file>
                 </library>
                 <library dirs="200">
                     <file>${file.reference.castor-1.1.1.jar}</file>
@@ -34,7 +33,7 @@
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
                 <library dirs="200">
-                    <file>${file.reference.commons-lang-2.5.jar}</file>
+                    <file>${file.reference.portlet-api-2.0.jar}</file>
                 </library>
             </web-module-libraries>
             <web-module-additional-libraries/>

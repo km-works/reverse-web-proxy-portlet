@@ -1,5 +1,7 @@
-package kmworks.liferay.amorc.portlet;
+package kmworks.liferay.portlet;
 
+import com.liferay.portal.kernel.exception.PortalException;
+import com.liferay.portal.kernel.exception.SystemException;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.util.HashMap;
@@ -34,8 +36,8 @@ public class ReverseProxyIFramePortlet extends IFrameGenericPortlet {
 	
 	private static final Log _log = LogFactory.getLog(ReverseProxyIFramePortlet.class);
   
-  private final Map<String, String> attributes = new HashMap<String, String>();
-  private final Map<String, String> maxAttributes = new HashMap<String, String>();
+  private final Map<String, String> attributes = new HashMap<>();
+  private final Map<String, String> maxAttributes = new HashMap<>();
 	private String editJsp;
 	
   @Override
@@ -63,7 +65,7 @@ public class ReverseProxyIFramePortlet extends IFrameGenericPortlet {
     attributes.put("SCROLLING", "NO");
     attributes.put("STYLE", "");
     
-    maxAttributes.put("HEIGHT", "800");
+    maxAttributes.put("HEIGHT", "600");
     maxAttributes.put("WIDTH", "100%");
     maxAttributes.put("SCROLLING", "AUTO");
     maxAttributes.put("STYLE", "");
@@ -76,7 +78,7 @@ public class ReverseProxyIFramePortlet extends IFrameGenericPortlet {
 
     PortletPreferences prefs = request.getPreferences();
     Map<String, String[]> map = prefs.getMap();
-    Map<String, String> prefsMap = new HashMap<String, String>();
+    Map<String, String> prefsMap = new HashMap<>();
     for (String key : map.keySet()) {
       String[] prefValue = map.get(key);
       prefsMap.put(key, prefValue == null || prefValue[0] == null ? "" : prefValue[0]);
@@ -222,6 +224,7 @@ public class ReverseProxyIFramePortlet extends IFrameGenericPortlet {
     appendAttribute(prefs, content, attribute, maxAttributes);
   }
 
+  @Override
   public String getURLSource(RenderRequest request, RenderResponse response, PortletPreferences prefs) {
     String[] srcReplaceValues = {request.getServerName(), Integer.toString(request.getServerPort()), request.getContextPath()};
 
@@ -260,7 +263,7 @@ public class ReverseProxyIFramePortlet extends IFrameGenericPortlet {
 			if (userId != 0L) {
 				user = UserLocalServiceUtil.getUserById(userId);
 			}
-		} catch (Exception e) {} 
+		} catch (PortalException | SystemException e) {} 
 		if (userId == 0L || user == null) {
 			return null;
 		} else {
