@@ -23,7 +23,8 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class HttpReverseProxyServlet extends org.apache.portals.applications.webcontent.proxy.impl.DefaultHttpReverseProxyServlet{
+public class HttpReverseProxyServlet 
+        extends org.apache.portals.applications.webcontent.proxy.impl.DefaultHttpReverseProxyServlet{
 
 	private static final long serialVersionUID = 1L;
 	private static final String MSG_FORBIDDEN = "Diese Seite kann nur angezeigt werden, wenn Sie im Portal angemeldet sind";

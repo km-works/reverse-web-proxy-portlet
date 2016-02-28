@@ -9,7 +9,7 @@
 	String editPrefsURL = (String)request.getAttribute("actionURL");
 %>
 
-<h3 class="portlet-section-header">Reverse Web Proxy Preferences</h3>
+<h3 class="portlet-section-header">KM-WORKS Reverse Web Proxy Portlet Preferences</h3>
 
 <form id="<portlet:namespace/>editForm" action="<%= editPrefsURL %>" method="post">
   
@@ -34,6 +34,10 @@
       <tr>
         <td>Width:&nbsp;</td>
         <td><input name="<portlet:namespace/>WIDTH" value="<%= prefsMap.get("WIDTH") %>" style="width: 100px" /></td>
+      </tr>    
+      <tr>
+        <td>Scrolling:&nbsp;</td>
+        <td><input name="<portlet:namespace/>SCROLLING" value="<%= prefsMap.get("SCROLLING") %>" style="width: 100px" /></td>
       </tr>    
     </tbody>
   </table>
